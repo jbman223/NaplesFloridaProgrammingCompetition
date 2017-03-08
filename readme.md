@@ -34,7 +34,7 @@ The Naples Florida Programming Competition website can be installed locally or o
 
         cp db.php ../db.php
         cp db.php ../includes/db.php
-        cp mandrill_config.php ../mail
+        cp mandrill_config.php ../mail/mandrill_config.php
 
 
 3. Set up the database schema:
