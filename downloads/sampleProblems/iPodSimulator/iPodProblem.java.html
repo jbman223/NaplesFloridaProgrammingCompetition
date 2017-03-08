@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>/var/www/programmingcompetition.org/downloads/sampleProblems/iPodSimulator/iPodProblem.java</title>
+</head>
+<body style="background-color:#1c1c1c">
+<pre style="color:#d0d0d0; background-color:#1c1c1c; font-size:10pt; font-family:'Courier New';"><span style="color:#87afdf">import</span> java<span style="color:#d0d0d0">.</span>io<span style="color:#d0d0d0">.</span>File<span style="color:#d0d0d0">;</span>
+<span style="color:#87afdf">import</span> java<span style="color:#d0d0d0">.</span>util<span style="color:#d0d0d0">.</span>ArrayList<span style="color:#d0d0d0">;</span>
+<span style="color:#87afdf">import</span> java<span style="color:#d0d0d0">.</span>util<span style="color:#d0d0d0">.</span>HashMap<span style="color:#d0d0d0">;</span>
+<span style="color:#87afdf">import</span> java<span style="color:#d0d0d0">.</span>util<span style="color:#d0d0d0">.</span>Scanner<span style="color:#d0d0d0">;</span>
+
+
+<span style="color:#87afdf">public class</span> iPodProblem <span style="color:#d0d0d0">{</span>
+	
+	<span style="color:#87afdf">public static</span> <span style="color:#87de8c">void</span> <span style="color:#de87da">main</span><span style="color:#d0d0d0">(</span>String<span style="color:#d0d0d0">[]</span> args<span style="color:#d0d0d0">) {</span>
+		<span style="color:#87afdf">try</span> <span style="color:#d0d0d0">{</span>
+			File f <span style="color:#d0d0d0">=</span> <span style="color:#87afdf">new</span> <span style="color:#de87da">File</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;input.txt&quot;</span><span style="color:#d0d0d0">);</span>
+			Scanner s <span style="color:#d0d0d0">=</span> <span style="color:#87afdf">new</span> <span style="color:#de87da">Scanner</span><span style="color:#d0d0d0">(</span>f<span style="color:#d0d0d0">);</span>
+			iPod i <span style="color:#d0d0d0">=</span> <span style="color:#87afdf">new</span> <span style="color:#de87da">iPod</span><span style="color:#d0d0d0">();</span>
+			<span style="color:#87afdf">while</span> <span style="color:#d0d0d0">(</span>s<span style="color:#d0d0d0">.</span><span style="color:#de87da">hasNextLine</span><span style="color:#d0d0d0">()) {</span>
+				<span style="color:#87afdf">if</span> <span style="color:#d0d0d0">(!</span>i<span style="color:#d0d0d0">.</span><span style="color:#de87da">parseCommand</span><span style="color:#d0d0d0">(</span>s<span style="color:#d0d0d0">.</span><span style="color:#de87da">nextLine</span><span style="color:#d0d0d0">()))</span>
+					i <span style="color:#d0d0d0">=</span> <span style="color:#87afdf">new</span> <span style="color:#de87da">iPod</span><span style="color:#d0d0d0">();</span>
+			<span style="color:#d0d0d0">}</span>
+		<span style="color:#d0d0d0">}</span> <span style="color:#87afdf">catch</span> <span style="color:#d0d0d0">(</span>Exception e<span style="color:#d0d0d0">) {</span>
+			e<span style="color:#d0d0d0">.</span><span style="color:#de87da">printStackTrace</span><span style="color:#d0d0d0">();</span>
+		<span style="color:#d0d0d0">}</span>
+	<span style="color:#d0d0d0">}</span>
+<span style="color:#d0d0d0">}</span>
+
+<span style="color:#87afdf">class</span> iPod <span style="color:#d0d0d0">{</span>
+	String iPodName <span style="color:#d0d0d0">=</span> <span style="color:#ffffaf">&quot;&quot;</span><span style="color:#d0d0d0">;</span>
+	HashMap<span style="color:#d0d0d0">&lt;</span>String<span style="color:#d0d0d0">,</span> ArrayList<span style="color:#d0d0d0">&lt;</span>String<span style="color:#d0d0d0">&gt;&gt;</span> playlists <span style="color:#d0d0d0">=</span> <span style="color:#87afdf">new</span> HashMap<span style="color:#d0d0d0">&lt;</span>String<span style="color:#d0d0d0">,</span> ArrayList<span style="color:#d0d0d0">&lt;</span>String<span style="color:#d0d0d0">&gt;&gt;(</span><span style="color:#dfaf87">10</span><span style="color:#d0d0d0">);</span>
+	
+	<span style="color:#87afdf">public</span> <span style="color:#de87da">iPod</span><span style="color:#d0d0d0">() {</span>
+		
+	<span style="color:#d0d0d0">}</span>
+	
+	<span style="color:#87afdf">public</span> <span style="color:#87de8c">boolean</span> <span style="color:#de87da">parseCommand</span><span style="color:#d0d0d0">(</span>String line<span style="color:#d0d0d0">) {</span>
+		<span style="color:#87afdf">if</span> <span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">startsWith</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;IPOD&quot;</span><span style="color:#d0d0d0">)) {</span>
+			<span style="color:#87afdf">this</span><span style="color:#d0d0d0">.</span>iPodName <span style="color:#d0d0d0">=</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">replace</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;IPOD&quot;</span><span style="color:#d0d0d0">,</span> <span style="color:#ffffaf">&quot;&quot;</span><span style="color:#d0d0d0">).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">();</span>
+			<span style="color:#87afdf">return</span> true<span style="color:#d0d0d0">;</span>
+		<span style="color:#d0d0d0">}</span> <span style="color:#87afdf">else if</span> <span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">startsWith</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;TRACK&quot;</span><span style="color:#d0d0d0">)) {</span>
+			String playlist <span style="color:#d0d0d0">=</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">substring</span><span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">indexOf</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">)+</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">.</span><span style="color:#de87da">length</span><span style="color:#d0d0d0">()).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">();</span>
+			String track <span style="color:#d0d0d0">=</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">substring</span><span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">indexOf</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;TRACK&quot;</span><span style="color:#d0d0d0">)+</span><span style="color:#ffffaf">&quot;TRACK&quot;</span><span style="color:#d0d0d0">.</span><span style="color:#de87da">length</span><span style="color:#d0d0d0">(),</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">indexOf</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">)).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">();</span>
+			playlists<span style="color:#d0d0d0">.</span><span style="color:#de87da">get</span><span style="color:#d0d0d0">(</span>playlist<span style="color:#d0d0d0">).</span><span style="color:#de87da">add</span><span style="color:#d0d0d0">(</span>track<span style="color:#d0d0d0">);</span>
+			<span style="color:#87afdf">return</span> true<span style="color:#d0d0d0">;</span>
+		<span style="color:#d0d0d0">}</span> <span style="color:#87afdf">else if</span> <span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">startsWith</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">)) {</span>
+			playlists<span style="color:#d0d0d0">.</span><span style="color:#de87da">put</span><span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">replace</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">,</span> <span style="color:#ffffaf">&quot;&quot;</span><span style="color:#d0d0d0">).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">(),</span> <span style="color:#87afdf">new</span> ArrayList<span style="color:#d0d0d0">&lt;</span>String<span style="color:#d0d0d0">&gt;(</span><span style="color:#dfaf87">10</span><span style="color:#d0d0d0">));</span>
+			<span style="color:#87afdf">return</span> true<span style="color:#d0d0d0">;</span>
+		<span style="color:#d0d0d0">}</span> <span style="color:#87afdf">else if</span> <span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">startsWith</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;DELETE&quot;</span><span style="color:#d0d0d0">)) {</span>
+			String playlist <span style="color:#d0d0d0">=</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">substring</span><span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">indexOf</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">)+</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">.</span><span style="color:#de87da">length</span><span style="color:#d0d0d0">()).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">();</span>
+			String track <span style="color:#d0d0d0">=</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">substring</span><span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">indexOf</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;DELETE&quot;</span><span style="color:#d0d0d0">)+</span><span style="color:#ffffaf">&quot;delete&quot;</span><span style="color:#d0d0d0">.</span><span style="color:#de87da">length</span><span style="color:#d0d0d0">(),</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">indexOf</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAYLIST&quot;</span><span style="color:#d0d0d0">)).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">();</span>
+			playlists<span style="color:#d0d0d0">.</span><span style="color:#de87da">get</span><span style="color:#d0d0d0">(</span>playlist<span style="color:#d0d0d0">).</span><span style="color:#de87da">remove</span><span style="color:#d0d0d0">(</span>track<span style="color:#d0d0d0">);</span>
+			<span style="color:#87afdf">return</span> true<span style="color:#d0d0d0">;</span>
+		<span style="color:#d0d0d0">}</span> <span style="color:#87afdf">else if</span> <span style="color:#d0d0d0">(</span>line<span style="color:#d0d0d0">.</span><span style="color:#de87da">startsWith</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAY&quot;</span><span style="color:#d0d0d0">)) {</span>
+			String playlist <span style="color:#d0d0d0">=</span> line<span style="color:#d0d0d0">.</span><span style="color:#de87da">replace</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;PLAY&quot;</span><span style="color:#d0d0d0">,</span> <span style="color:#ffffaf">&quot;&quot;</span><span style="color:#d0d0d0">).</span><span style="color:#de87da">trim</span><span style="color:#d0d0d0">();</span>
+			System<span style="color:#d0d0d0">.</span>out<span style="color:#d0d0d0">.</span><span style="color:#de87da">println</span><span style="color:#d0d0d0">(</span><span style="color:#ffffaf">&quot;Playing &quot;</span><span style="color:#d0d0d0">+</span>playlist<span style="color:#d0d0d0">+</span><span style="color:#ffffaf">&quot; (&quot;</span><span style="color:#d0d0d0">+</span>playlists<span style="color:#d0d0d0">.</span><span style="color:#de87da">get</span><span style="color:#d0d0d0">(</span>playlist<span style="color:#d0d0d0">).</span><span style="color:#de87da">size</span><span style="color:#d0d0d0">()+</span><span style="color:#ffffaf">&quot; Songs)&quot;</span><span style="color:#d0d0d0">);</span>
+			<span style="color:#87afdf">for</span> <span style="color:#d0d0d0">(</span>String track <span style="color:#d0d0d0">:</span> playlists<span style="color:#d0d0d0">.</span><span style="color:#de87da">get</span><span style="color:#d0d0d0">(</span>playlist<span style="color:#d0d0d0">)) {</span>
+				System<span style="color:#d0d0d0">.</span>out<span style="color:#d0d0d0">.</span><span style="color:#de87da">println</span><span style="color:#d0d0d0">(</span>track<span style="color:#d0d0d0">);</span>
+			<span style="color:#d0d0d0">}</span>
+			<span style="color:#87afdf">return</span> true<span style="color:#d0d0d0">;</span>
+		<span style="color:#d0d0d0">}</span> <span style="color:#87afdf">else</span> <span style="color:#d0d0d0">{</span>
+			<span style="color:#87afdf">return</span> false<span style="color:#d0d0d0">;</span>
+		<span style="color:#d0d0d0">}</span>
+	<span style="color:#d0d0d0">}</span>
+<span style="color:#d0d0d0">}</span>
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 3.9, http://www.andre-simon.de/-->

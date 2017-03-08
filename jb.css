@@ -1,0 +1,28 @@
+body {
+    padding-top: 50px;
+}
+.starter-template {
+    padding: 35px 15px;
+    text-align: center;
+}
+.icon-font {
+    font-size: 61px;
+}
+.info {
+    height: 68px;
+}
+.large-text {
+    font-size: 48px;
+    font-weight: bold;
+}
+.info-row {
+    padding-top: 8px;
+}
+.info-row + .info-row {
+    border-top: 1px solid;
+}
+@media only screen and (max-device-width : 667px) {
+    .info {
+        height: 113px;
+    }
+}

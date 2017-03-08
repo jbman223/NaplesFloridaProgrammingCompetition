@@ -1,0 +1,4 @@
+<?php
+
+//MANDRILL ACCOUNT INFORMATION
+$madrillID = "";

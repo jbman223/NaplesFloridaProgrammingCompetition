@@ -1,0 +1,106 @@
+body {
+    background: #4c6282;
+}
+
+.logoRow {
+    padding: 0 0 5px 0;
+}
+
+.logo-image {
+    max-width: 700px;
+}
+
+.bg-container {
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: black 0 2px 2px;
+    margin: -5px auto 15px auto;
+}
+
+.main-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.container-fluid {
+    width: 98%;
+    min-height: 100%;
+}
+
+.image {
+    position: relative;
+    width: 100%; /* for IE 6 */
+    text-shadow: 2px 2px 3px black;
+}
+
+.image h2 {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+}
+
+.image h2 span {
+    font-size: larger;
+}
+
+.sponsors img {
+    max-width: 100%;
+}
+
+.starter-template {
+    padding: 35px 15px;
+    text-align: center;
+}
+.icon-font {
+    font-size: 61px;
+}
+.info {
+    height: 68px;
+}
+.large-text {
+    font-size: 48px;
+    font-weight: bold;
+}
+.info-row {
+    padding-top: 8px;
+}
+.info-row + .info-row {
+    border-top: 1px solid;
+}
+.login-form {
+    margin: 0 auto;
+    max-width: 400px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.login-form .input-group {
+    padding: 5px;
+
+}
+
+.fixed-top {
+    position:fixed;
+    top:0;
+    z-index:999;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 480px) {
+    .logo-image {
+        max-width: 100%;
+    }
+
+    .image h2 {
+        top: 0px;
+        left: 0;
+        font-size: 24px;
+    }
+    .info {
+        height: 113px;
+    }
+}
