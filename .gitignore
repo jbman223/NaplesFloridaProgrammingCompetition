@@ -1,9 +1,8 @@
 /AuditClick
-/edu
-/compete
-/competitionSite
 /db.php
 /landingPage
-/2015
 /mail/mandrill_config.php
 /includes/db.php
+/compete/content/db.php
+.idea/
+newSite/
