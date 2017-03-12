@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group Play</title>
+
+    <script src="https://youtube.com/iframe_api"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://159.203.168.143:25565/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+<div style="padding-top:0;margin: 0 auto;width: 1000px;height:800px;background:darkslategrey;">
+    <div id="player">
+
+
+    </div>
+
+    <p>
+        <b>Connected Users: </b><span class="connected-count"></span><br />
+        <input type="text" name="videoId" /> <a href="#" class="new-video-id">Push</a><br />
+        <a href="#" class="preload-all">Preload All</a>  ||  <a href="#" class="play-all">Play All</a>  ||  <a href="#" class="pause-all">Pause All</a>  ||  <a href="#" class="seek-all">Seek All</a>
+    </p>
+</div>
+
+
+<script>
+    var player;
+    var preloading = false;
+    var loaded = false;
+    var socket = io.connect("http://159.203.168.143:25565/");
+
+
+    function preload(videoId) {
+        if (videoId != "") {
+            player.loadVideoById(videoId,
+                    0,
+                    "large");
+        }
+
+        preloading = true;
+        player.mute();
+        player.playVideo();
+    }
+
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player("player", {
+            videoId: 'dKvGM1UPs7I',
+            events: {
+                'onReady': playerReady,
+                'onStateChange': playerStateChange
+            },
+            playerVars: {
+                'controls': 0,
+                'rel': 0,
+                'showinfo': 0
+            }
+        });
+    }
+
+    function playerReady(event) {
+        player.getIframe().style = "width: 80%;";
+        loaded = true;
+        preload("");
+    }
+
+    function playerStateChange(event) {
+        if (preloading && event.data == 1) {
+            player.pauseVideo();
+            player.seekTo(0, false);
+            player.unMute();
+            preloading = false;
+        }
+    }
+
+    $(".new-video-id").click(function (e) {
+        e.preventDefault();
+
+        console.log("Sending ", $("input[name=videoId]").val());
+        socket.emit("videoID", {id: $("input[name=videoId]").val()});
+    });
+    $(".preload-all").click(function (e) {
+        e.preventDefault();
+        console.log("sending preload to server");
+        socket.emit("preloadAll", {id: ""});
+    });
+    $(".play-all").click(function (e) {
+        e.preventDefault();
+        console.log("sending play to server");
+        socket.emit("playAll", {id: ""});
+    });
+    $(".pause-all").click(function (e) {
+        e.preventDefault();
+        console.log("sending pause to server");
+        socket.emit("pauseAll", {id: ""});
+    });
+    $(".seek-all").click(function (e) {
+        e.preventDefault();
+        socket.emit("reset")
+    });
+
+    socket.on("connect", function () {
+        console.log("Connected!");
+    });
+
+    socket.on("play", function() {
+        player.playVideo();
+    });
+
+    socket.on("pause", function() {
+        player.pauseVideo();
+    });
+
+    socket.on("connectionCount", function (data) {
+        if (parseInt(data.count) > 1) {
+            $(".connected-count").html(data.count+" connected clients.");
+        } else {
+            $(".connected-count").html(data.count+" connected client.");
+        }
+    });
+
+    socket.on("reset", function (data) {
+        player.seekTo(0, false);
+    });
+
+    socket.on("videoID", function (data) {
+        console.log("Preload Directive", data);
+        if (loaded && player)
+            preload(data.id);
+        $("input[name=videoId]").val(data.id);
+    });
+</script>
+</body>
+</html>
