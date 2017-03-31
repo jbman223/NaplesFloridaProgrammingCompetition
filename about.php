@@ -23,7 +23,7 @@ require_once "includes/require.php";
 
 <div class="container-fluid">
 
-    <? require_once "content/menu.php"; ?>
+    <?php require_once "content/menu.php"; ?>
 
     <div class="bg-container">
         <div class="row">
@@ -44,7 +44,7 @@ require_once "includes/require.php";
 
                 <div class="row">
                     <div class="col-lg-9 col-sm-9 col-xs-9 text-justify">
-                        <p class="lead">The competition will take place on <strong>Saturday, April 23rd, 2016 from 8:30AM to 1:30PM.
+                        <p class="lead">This year's competition will take place on <strong>Saturday, April 22rd, 2017 from 9:00AM to 3:00PM.
                                 <a href="register.php">Register your team</a></strong> and mark your calendars!</p>
                     </div>
                     <div class="col-lg-3 col-sm-3 col-xs-3 text-center">

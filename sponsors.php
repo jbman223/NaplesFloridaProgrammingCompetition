@@ -24,7 +24,7 @@ require_once "includes/require.php";
 
 <div class="container-fluid">
 
-    <? require_once "content/menu.php"; ?>
+    <?php require_once "content/menu.php"; ?>
 
     <div class="bg-container">
         <div class="row">
@@ -48,7 +48,7 @@ require_once "includes/require.php";
                         <a href="http://communityschoolnaples.org/"><img src="sliderPhotos/community.jpg" style="max-width: 100%;"/></a>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
-                        <a href="http://agingcare.com"><img src="sliderPhotos/aging-care-logo.jpg" style="max-width: 100%;"/></a>
+                        <a href="http://gulfstreampainting.com"><img src="images/GSP.png" style="max-width: 100%;"/></a>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <a href="http://swfrtp.org/"><img src="images/logo.png" style="max-width: 100%;" /></a>

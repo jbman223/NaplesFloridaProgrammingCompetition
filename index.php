@@ -26,7 +26,7 @@ require_once "includes/require.php";
 
 <div class="container-fluid">
 
-    <? require_once "content/menu.php"; ?>
+    <?php include_once "content/menu.php"; ?>
 
     <div class="bg-container">
         <div class="row" style="margin: -10px -25px 15px;">
@@ -35,7 +35,7 @@ require_once "includes/require.php";
                     <img src="/images/index/IMG_8289.jpg" style="width: 100%;border-radius: 3px 3px 0 0;"/>
 
                     <h2>
-                        <span>Thanks to everyone who came out!<br /><a href="2016" style="color:white;">Check out this year's album!</a></span>
+                        <span>Don't forget to sign up for the 2017 competition!<br /><a href="2016" style="color:white;">Check out last year's album!</a></span>
                     </h2>
                 </div>
             </div>

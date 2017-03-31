@@ -24,7 +24,7 @@ require_once "includes/require.php";
 
 <div class="container-fluid">
 
-    <? require_once "content/menu.php"; ?>
+    <?php require_once "content/menu.php"; ?>
 
     <div class="bg-container">
         <div class="row">
@@ -48,14 +48,14 @@ require_once "includes/require.php";
                         <p><span class="glyphicon glyphicon-calendar icon-font" aria-hidden="true"></span><br>WHEN</p>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-xs-6 text-left">
-                        <p class="lead">The competition will take place on <strong>Saturday, April 23rd, 2016</strong>. Mark your calendars!<br>Don't forget to sign up by April 13th!</p>
+                        <p class="lead">The competition will take place on <strong>Saturday, April 22rd, 2017</strong>. Mark your calendars!<br>Don't forget to sign up by April 12th!</p>
                     </div>
                 </div>
 
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">8:00 - 8:30</span>
+                            <span class="large-text">9:00 - 9:20</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -67,7 +67,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">8:30 - 8:45</span>
+                            <span class="large-text">9:20 - 9:35</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -78,7 +78,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">8:50 - 9:20</span>
+                            <span class="large-text">9:40 - 10:00</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -91,7 +91,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">9:30 - 11:15</span>
+                            <span class="large-text">10:05 - 12:45</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -104,42 +104,43 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">11:15 - 11:30</span>
+                            <span class="large-text">12:50 - 1:25</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <p class="lead text-left">Snack break. Snacks and drinks will be provided by our corporate sponsors.</p>
+                        <p class="lead text-left">Lunch! Pizza will be provided by Gulfstream Painting.</p>
                     </div>
                 </div>
 
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">11:30 - 12:30</span>
+                            <span class="large-text">1:30 - 2:30</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <p class="lead text-left">Special problem round. Each team will be expected to complete one problem based
-                            on real world problems faced by programmers in the local community. This round is not a major
-                            factor for score, but it will be scored. </p>
+                        <p class="lead text-left">Mutliple Choice Round. Each team will be expected to complete
+                            a AP style multiple choice test. These questions will be taken from past AP exams and
+                            created by AP teachers or former AP Comper Science A students. It is not a huge factor
+                            for score, but it will be scored. </p>
                     </div>
                 </div>
 
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">12:30 - 1:00</span>
+                            <span class="large-text">2:30 - 2:45</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <p class="lead text-left">Lunch! Pizza will be provided by AgingCare.com.<br><br></p>
+                        <p class="lead text-left">Nap Time! Programming gets tough, and we understand that struggle!<br><br></p>
                     </div>
                 </div>
 
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">1:00 - 1:30</span>
+                            <span class="large-text">2:45 - 3:00</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
