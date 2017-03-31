@@ -24,7 +24,7 @@ require_once "includes/require.php";
 
 <div class="container-fluid">
 
-    <? require_once "content/menu.php"; ?>
+    <?php require_once "content/menu.php"; ?>
 
     <div class="bg-container">
         <div class="row">
@@ -67,7 +67,7 @@ require_once "includes/require.php";
                             <div class="panel-body">
                                 <h4 class="text-center">Competition Quick Info</h4>
                                 <ul class="lead">
-                                    <li>Date: April 23rd, 2016 at 8:30AM</li>
+                                    <li>Date: April 22rd, 2017 at 9:00AM</li>
                                     <li>Location: <a href="https://www.google.com/maps/place/13275+Livingston+Road+Naples+Florida+3410">13275 Livingston Road, 34109</a></li>
                                     <li>Prizes: Prizes will be awarded to the top three placing teams.</li>
                                     <li>All competing teams will be given a T-Shirt.</li>
