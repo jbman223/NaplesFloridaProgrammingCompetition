@@ -7,3 +7,4 @@
 .idea/
 newSite/
 /edu/api/db.php
+deploy.sh
