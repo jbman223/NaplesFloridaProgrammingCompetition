@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  webserver:
+    build: .
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - "3000:80"
+  mysql:
+    image: mysql:5.6
+    volumes:
+       - ./config/programmingcompetition_layout.sql:/docker-entrypoint-initdb.d/init.sql
+       - ./config/programmingcompetition_populate.sql:/docker-entrypoint-initdb.d/z_populate.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: localhost
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
