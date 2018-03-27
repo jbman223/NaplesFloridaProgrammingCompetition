@@ -106,6 +106,7 @@ $problems = array();
                                     <label for="language">Language</label>
                                     <select class="form-control" name="language" id="language">
                                         <option value="java">Java</option>
+                                        <option value="javascript">Javascript</option>
                                         <option value="c">C/C++</option>
                                     </select>
                                 </div>

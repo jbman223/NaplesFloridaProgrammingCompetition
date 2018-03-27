@@ -39,10 +39,10 @@ if (isset($_POST['section_id'], $_POST['code'], $_POST['problem_id'], $_POST['la
 
         $result = json_decode(run($_POST['language'], $problem["problem_input"], $_POST["code"]));
         $state = $db->prepare("insert into code_results (code, code_hash, error, `output`, run_time) values (?, ?, ?, ?, ?)");
-        $state->execute(array($_POST['code'], md5($_POST['code']), ($result->errors==null)?"":$result->errors, ($result->output==null)?"error":$result->output, ($result->time==null)?0:$result->time));
+        $state->execute(array($_POST['code'], md5($_POST['code']), $result->message->type=="success"?"":$result->message->data, implode("\n", $result->stdouts), 0));
         $lastID = $db->lastInsertId();
 
-        $formattedOutput = preg_replace('/\s+/', '', $result->output);
+        $formattedOutput = preg_replace('/\s+/', '', implode("\n", $result->stdouts));
         $outputHash = md5($formattedOutput);
 
         $solved = 0;
