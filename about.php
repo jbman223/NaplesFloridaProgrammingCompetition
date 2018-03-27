@@ -44,7 +44,7 @@ require_once "includes/require.php";
 
                 <div class="row">
                     <div class="col-lg-9 col-sm-9 col-xs-9 text-justify">
-                        <p class="lead">This year's competition will take place on <strong>Saturday, April 7th, <?php echo date("Y") ?> from 8:45AM to 12:30PM.
+                        <p class="lead">This year's competition will take place on <strong>Saturday, April 7th, <?php echo date("Y"); ?> from 8:45AM to 12:30PM.
                                 <a href="register.php">Register your team</a></strong> and mark your calendars!</p>
                     </div>
                     <div class="col-lg-3 col-sm-3 col-xs-3 text-center">

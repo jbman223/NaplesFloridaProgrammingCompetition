@@ -48,7 +48,7 @@ require_once "includes/require.php";
                         <p><span class="glyphicon glyphicon-calendar icon-font" aria-hidden="true"></span><br>WHEN</p>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-xs-6 text-left">
-                        <p class="lead">The competition will take place on <strong>Saturday, April 7th, <?php echo date("Y") ?></strong>. Mark your calendars!<br>Don't forget to sign up by April 6th!</p>
+                        <p class="lead">The competition will take place on <strong>Saturday, April 7th, <?php echo date("Y"); ?></strong>. Mark your calendars!<br>Don't forget to sign up by April 6th!</p>
                     </div>
                 </div>
 
