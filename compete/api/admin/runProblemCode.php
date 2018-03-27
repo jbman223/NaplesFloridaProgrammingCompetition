@@ -18,13 +18,19 @@ if (isset($_POST['id'])) {
         if ($problem["problem_code"] != "" && $problem["problem_input"] != "") {
             $result = json_decode(run("java", $problem["problem_input"], $problem["problem_code"]));
 
+	    if ($result == null) {
+		die(json_encode(array("error" => "Result is null!")));
+	    }
+
+	    // die(json_encode(array("error" => $result)));
+	 
             $state = $db->prepare("insert into code_results (code, code_hash, error, `output`, run_time) values (?, ?, ?, ?, ?)");
-            $state->execute(array($problem["problem_code"], $problem["problem_code_hash"], $result->errors==null?"":$result->errors, $result->output, $result->time));
+            $state->execute(array($problem["problem_code"], $problem["problem_code_hash"], $result->message->type=="success"?"":$result->message->data, implode("\n", $result->stdouts), $result->message->data));
             $lastID = $db->lastInsertId();
             $status = 0;
             $problemStatus = 0;
 
-            $formattedOutput = preg_replace('/\s+/', '', $result->output);
+            $formattedOutput = preg_replace('/\s+/', '', implode("\n", $result->stdouts));
             $outputHash = md5($formattedOutput);
 
             if ($outputHash != $problem['problem_output_hash']) {
