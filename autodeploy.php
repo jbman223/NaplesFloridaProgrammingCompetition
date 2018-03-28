@@ -1,10 +1,11 @@
 <?php
 echo "hi!";
 //autodeploy git repo
-$event = $_SERVER['X-GitHub-Event'];
-$guid = $_SERVER['X-GitHub-Delivery'];
+$event = $_SERVER['HTTP_X_GITHUB_EVENT'];
+$guid = $_SERVER['HTTP_X_GITHUB_DELIVERY'];
 
 if ($event != "push" && $event != "ping") {
+    echo $event;
     die("Unsupported event.");
 }
 
