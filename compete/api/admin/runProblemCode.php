@@ -13,16 +13,14 @@ if (isset($_POST['id'])) {
     $state = $db->prepare("select * from problem_data where id = ?");
     $state->execute(array($_POST['id']));
     $problem = $state->fetchAll(PDO::FETCH_ASSOC);
-    if (count($problem) != 0) {
+    if (count($problem) == 1) {
         $problem = $problem[0];
-        if ($problem["problem_code"] != "" && $problem["problem_input"] != "") {
+        if ($problem["problem_code"] != "") {
             $result = json_decode(run("java", $problem["problem_input"], $problem["problem_code"]));
 
-	    if ($result == null) {
-		die(json_encode(array("error" => "Result is null!")));
-	    }
-
-	    // die(json_encode(array("error" => $result)));
+            if ($result == null) {
+            die(json_encode(array("error" => "Result is null!")));
+            }
 	 
             $state = $db->prepare("insert into code_results (code, code_hash, error, `output`, run_time) values (?, ?, ?, ?, ?)");
             $state->execute(array($problem["problem_code"], $problem["problem_code_hash"], $result->message->type=="success"?"":$result->message->data, implode("\n", $result->stdouts), $result->message->data));
@@ -51,6 +49,7 @@ if (isset($_POST['id'])) {
 
             die(json_encode(array("success" => $lastID)));
         }
+        die(json_encode(array("error" => "Problem code is empty.")));
     }
 
     die(json_encode(array("error" => "Problem ID not found.")));

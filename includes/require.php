@@ -19,6 +19,7 @@ $gaCode = "
 </script>
 ";
 
+date_default_timezone_set('America/New_York');
 function isUserLoggedIn() {
     return isset($_SESSION['id']);
 }
