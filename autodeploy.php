@@ -11,7 +11,7 @@ if ($event != "push" && $event != "ping") {
 $log = fopen("gitlog.txt", "a");
 
 $payload = json_decode($_POST['payload']);
-if ($payload["ref"] == "refs/heads/master") {
+if ($payload->ref == "refs/heads/master") {
     fwrite($log, "AUTODEPLOY FROM MASTER\n");
     exec("cd ".__DIR__." && git pull");
 }
