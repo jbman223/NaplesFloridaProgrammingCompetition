@@ -8,4 +8,4 @@
 newSite/
 /edu/api/db.php
 deploy.sh
-/docker/data
+/docker

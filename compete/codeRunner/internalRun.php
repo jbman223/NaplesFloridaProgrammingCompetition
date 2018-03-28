@@ -1,5 +1,5 @@
 <?php
-require_once "/var/www/programmingcompetition.org/library/Requests.php";
+require_once __DIR__."/../../library/Requests.php";
 ignore_user_abort(true);
 Requests::register_autoloader();
 
@@ -12,7 +12,10 @@ function run($lang, $input, $code)
     $language = $languages[$lang];
 
     $header = array('Content-Type' => 'application/json');
-    $response = Requests::post($url, $header, json_encode(array("language" => $language, "code" => $code, "stdins" => explode("\n", $input))));
+    $response = Requests::post($url, $header, json_encode(array(
+        "language" => $language, 
+        "code" => $code, 
+        "stdins" => explode("\n", $input))));
 
     //$body = json_decode($response->body);
     //$body->errors = preg_replace('/Note:.+/g', '', $body->errors);

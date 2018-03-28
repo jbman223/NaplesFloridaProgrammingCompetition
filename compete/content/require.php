@@ -16,6 +16,8 @@ $gaCode = "
 </script>
 ";
 
+date_default_timezone_set('America/New_York');
+
 $user = false;
 if (isset($_SESSION['competition_site_id'])) {
     $state = $db->prepare("select * from teams where id = ?");
