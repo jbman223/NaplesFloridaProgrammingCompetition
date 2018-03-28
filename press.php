@@ -42,14 +42,14 @@ require_once "includes/require.php";
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h4 class="text-center">Competition Letter</h4>
-                                <p class="lead text-justify">The competition letter was initially sent out to schools in order to inform them of the intent of the competition, and also to ask for participation of the students.<br><a href="/downloads/OfficialLetter.pdf" target="_blank">Download The Letter</a></p>
+                                <p class="lead text-justify">The competition letter was initially sent out to schools in order to inform them of the intent of the competition, and also to ask for participation of the students.<br><a href="https://drive.google.com/open?id=1rGaajVH2k4dhbIuqw5d6DorFSrP5Nk-A" target="_blank">Download The Letter</a></p>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h4 class="text-center">Competition Poster</h4>
+                                <h4 class="text-center">Competition Poster 1</h4>
                                 <p class="lead text-justify">
-                                    The competition poster, designed by Steven Wulber, is available for download at full sized resolution.<br><a href="/downloads/pcp.jpg">Download Poster</a>
+                                    The competition poster, designed by Steven Wulber and Michael Foiani, is available for download at full sized resolution.<br><a href="https://drive.google.com/open?id=1Vh0huRJC1FCw6DmqiRNIL3IKcUPJ7DxS">Download Poster</a>
                                 </p>
                             </div>
                         </div>
@@ -57,8 +57,8 @@ require_once "includes/require.php";
                     <div class="col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h4 class="text-center">Competition Outline</h4>
-                                <p class="lead text-justify">The competition outline provides insight into very detailed information fo all parts of the competition, from the computers being used to the scoring and round composition. This resource is useful for fining specific competition information.<br><a href="https://docs.google.com/document/d/1oaaPaCS3qvEnrTVn1q2OmQOJzSglOmfygI2S_cmIeFc/edit?usp=sharing" target="_blank">View The Outline (Google Drive)</a></p>
+                                <h4 class="text-center">Competition Poster 2</h4>
+                                <p class="lead text-justify">This competition poster, designed by Kyle Dampier, is also available for download.<br><a href="https://drive.google.com/open?id=1Ndf5CxpZyPLebfT3Za1B-7iB_14d9HfK" target="_blank">View The Outline (Google Drive)</a></p>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ require_once "includes/require.php";
                             <div class="panel-body">
                                 <h4 class="text-center">Competition Quick Info</h4>
                                 <ul class="lead">
-                                    <li>Date: April 22rd, 2017 at 9:00AM</li>
+                                    <li>Date: April 7th, <?php echo date("Y"); ?> at 8:45AM</li>
                                     <li>Location: <a href="https://www.google.com/maps/place/13275+Livingston+Road+Naples+Florida+3410">13275 Livingston Road, 34109</a></li>
                                     <li>Prizes: Prizes will be awarded to the top three placing teams.</li>
                                     <li>All competing teams will be given a T-Shirt.</li>
