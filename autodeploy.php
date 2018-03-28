@@ -8,7 +8,7 @@ if ($event != "push" && $event != "ping") {
     die("Unsupported event.");
 }
 
-$log = fopen("gitlog.txt", "w+");
+$log = fopen("gitlog.txt", "a");
 
 $payload = json_decode($_POST['payload']);
 if ($payload["ref"] == "refs/heads/master") {
