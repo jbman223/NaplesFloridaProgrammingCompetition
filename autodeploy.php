@@ -16,9 +16,7 @@ if ($payload["ref"] == "refs/heads/master") {
 }
 
 
-ob_start();
-var_dump($_POST);
-fwrite($log, ob_get_clean());
+fwrite($log, json_encode($payload));
 fwrite($log, "\n");
 fflush($log);
 fclose($log);
