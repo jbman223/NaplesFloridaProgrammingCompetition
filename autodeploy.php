@@ -8,10 +8,16 @@ if ($event != "push" && $event != "ping") {
     die("Unsupported event.");
 }
 
+$log = fopen("gitlog.txt", "w+");
+
+$payload = json_decode($_POST['payload']);
+if ($payload["ref"] == "refs/heads/master") {
+    fwrite($log, "AUTODEPLOY FROM MASTER\n");
+}
+
 
 ob_start();
 var_dump($_POST);
-$log = fopen("gitlog.txt", "w+");
 fwrite($log, ob_get_clean());
 fwrite($log, "\n");
 fflush($log);
