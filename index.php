@@ -35,7 +35,7 @@ require_once "includes/require.php";
                     <img src="/images/index/IMG_8289.jpg" style="width: 100%;border-radius: 3px 3px 0 0;"/>
 
                     <h2>
-                        <span>Don't forget to sign up for the 2017 competition!<br /><a href="2016" style="color:white;">Check out last year's album!</a></span>
+                        <span>Don't forget to sign up for the <?php echo date("Y"); ?> competition!<br /><a href="2016" style="color:white;">Check out last year's album!</a></span>
                     </h2>
                 </div>
             </div>
