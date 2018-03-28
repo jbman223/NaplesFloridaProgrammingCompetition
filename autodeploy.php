@@ -8,12 +8,11 @@ if ($event != "push" && $event != "ping") {
     die("Unsupported event.");
 }
 
-$log = fopen("gitlog.txt", "a");
+$log = fopen("gitlog.txt", "w");
 
 $payload = json_decode($_POST['payload']);
 if ($payload->ref == "refs/heads/master") {
     fwrite($log, "AUTODEPLOY FROM MASTER\n");
-    $out;
     exec("cd ".__DIR__." && git pull", $out);
 }
 
