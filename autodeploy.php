@@ -13,11 +13,13 @@ $log = fopen("gitlog.txt", "a");
 $payload = json_decode($_POST['payload']);
 if ($payload->ref == "refs/heads/master") {
     fwrite($log, "AUTODEPLOY FROM MASTER\n");
-    //exec("cd ".__DIR__." && git pull");
+    $out;
+    exec("cd ".__DIR__." && git pull", $out);
 }
 
 
 fwrite($log, json_encode($payload));
+fwrite($log, $out);
 fwrite($log, "\n");
 fflush($log);
 fclose($log);
