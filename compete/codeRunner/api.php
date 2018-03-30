@@ -1,4 +1,4 @@
-\<?php
+<?php
 require_once "../content/require.php";
 require_once "../../library/Requests.php";
 ignore_user_abort(true);
