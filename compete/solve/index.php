@@ -99,12 +99,16 @@ $problems = array();
 
                                 <div class="form-group">
                                     <label for="code">Your Code</label>
-                                    <textarea class="form-control" id="code" name="problem_code" rows="10"></textarea>
+                                    <!--<textarea class="form-control" id="code" name="problem_code" rows="10"></textarea>-->
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                      <pre class="embed-responsive-item" id="editor" name="problem_code"></pre>
+                                    </div>
+
                                 </div>
 
                                 <div class="form-group">
                                     <label for="language">Language</label>
-                                    <select class="form-control" name="language" id="language">
+                                    <select class="form-control" name="language" id="language" onchange="changeLanguage()">
                                         <option value="java">Java</option>
                                         <option value="javascript">Javascript</option>
                                         <option value="c">C/C++</option>
@@ -147,5 +151,12 @@ $problems = array();
 
     <script src="../js/solve.js"></script>
     <script src="../js/liveEvents.js"></script>
+
+    <!-- load ace -->
+    <script src="./ace-builds/src/ace.js"></script>
+    <!-- load ace language tools -->
+    <script src="./ace-builds/src/ext-language_tools.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -36,7 +36,9 @@ $(".problem").submit(function (e) {
     var problem = $("select[name=problem_id]").val();
     var section = $("select[name=competition_section]").val();
     var language = $("select[name=language]").val();
-    var code = $("textarea[name=problem_code]").val();
+    // TODO: Change the implementation
+    // var code = $("textarea[name=problem_code]").val();
+    var code = window.ace.edit("editor").getValue();
 
     $(".submit").addClass("disabled");
 
