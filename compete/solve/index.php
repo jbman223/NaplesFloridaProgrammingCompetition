@@ -54,7 +54,7 @@ $problems = array();
                   <div class="col-md-8">
                     <form class="form-horizontal problem">
                     <div class="row">
-                      <div class="col-md-8">
+                      <div class="col-md-12">
                         <?
                         if (count($sections) > 0) {
                             ?>
@@ -98,22 +98,6 @@ $problems = array();
                                     ?>
                                 </select>
                             </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="selectTheme">Select Theme</label>
-                              <select class="form-control" id="selectTheme" onchange="changeTheme()">
-                                  <option value="monokai">Monokai</option>
-                                  <option value="twilight">Twilight</option>
-                                  <option value="chrome">Chrome</option>
-                                  <option value="github">Github</option>
-                              </select>
-                          </div>
-
-                          <div class="form-group">
-                              <label for="selectFont">Font Size (Number)</label>
-                              <input onkeyup="checkInput(this)" class="form-control" maxlength="2" value="12" id="selectFont" onchange="changeFont()">
-                          </div>
                       </div>
                     </div>
 
@@ -173,9 +157,9 @@ $problems = array();
     <script src="../js/liveEvents.js"></script>
 
     <!-- load ace -->
-    <script src="./ace-builds/src/ace.js"></script>
+    <script src="./src/ace.js"></script>
     <!-- load ace language tools -->
-    <script src="./ace-builds/src/ext-language_tools.js"></script>
+    <script src="./src/ext-language_tools.js"></script>
 
     <script src="js/script.js"></script>
 </body>
