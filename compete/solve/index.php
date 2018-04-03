@@ -51,82 +51,90 @@ $problems = array();
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                  <div class="col-md-8">
+                    <form class="form-horizontal problem">
+                    <div class="row">
+                      <div class="col-md-12">
                         <?
                         if (count($sections) > 0) {
                             ?>
-                            <form class="form-horizontal problem">
-                                <div class="form-group">
-                                    <label for="competitionSection">Select Competition</label>
-                                    <select class="form-control" id="competitionSection" name="competition_section">
+                            <div class="form-group">
+                                <label for="competitionSection">Select Competition</label>
+                                <select class="form-control" id="competitionSection" name="competition_section">
+                                    <?
+                                    $state = $db->prepare("select pd.problem_title, pd.id, csp.section_id as section_id from competition_section_problems csp inner join problem_data pd on csp.problem_id = pd.id where csp.section_id = ? ");
+
+
+
+                                    foreach ($sections as $section) {
+                                        $state->execute(array($section['id']));
+                                        $problem = $state->fetchAll(PDO::FETCH_ASSOC);
+                                        $problems = array_merge($problems, $problem);
+
+                                        ?>
+                                        <option
+                                            value="<? echo $section['id']; ?>"><? echo $section['section_name']; ?> - <? echo $section['competition_name']; ?></option>
                                         <?
-                                        $state = $db->prepare("select pd.problem_title, pd.id, csp.section_id as section_id from competition_section_problems csp inner join problem_data pd on csp.problem_id = pd.id where csp.section_id = ? ");
+                                    }
+                                    ?>
+                                </select>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="problemID">Select Problem - <a href="#" id="competitor_view">View Problem Description</a></label>
+                                <select class="form-control" id="problemID" name="problem_id">
+                                    <?
+                                    $state = $db->prepare("select * from solved_problems where team_id = ? and problem_id = ? and correct = 1 and section_id <> 7");
+                                    foreach ($problems as $problem) {
+                                        $state->execute(array($user['id'], $problem['id']));
 
-
-                                        foreach ($sections as $section) {
-                                            $state->execute(array($section['id']));
-                                            $problem = $state->fetchAll(PDO::FETCH_ASSOC);
-                                            $problems = array_merge($problems, $problem);
-
+                                        if (count($state->fetchAll(PDO::FETCH_ASSOC)) == 0) {
                                             ?>
                                             <option
-                                                value="<? echo $section['id']; ?>"><? echo $section['section_name']; ?> - <? echo $section['competition_name']; ?></option>
+                                                value="<? echo $problem['id']; ?>" data-sectionid="<? echo $problem['section_id']; ?>"><? echo $problem['problem_title']; ?></option>
                                             <?
                                         }
-                                        ?>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="problemID">Select Problem - <a href="#" id="competitor_view">View Problem Description</a></label>
-                                    <select class="form-control" id="problemID" name="problem_id">
-                                        <?
-                                        $state = $db->prepare("select * from solved_problems where team_id = ? and problem_id = ? and correct = 1 and section_id <> 7");
-                                        foreach ($problems as $problem) {
-                                            $state->execute(array($user['id'], $problem['id']));
-
-                                            if (count($state->fetchAll(PDO::FETCH_ASSOC)) == 0) {
-                                                ?>
-                                                <option
-                                                    value="<? echo $problem['id']; ?>" data-sectionid="<? echo $problem['section_id']; ?>"><? echo $problem['problem_title']; ?></option>
-                                                <?
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="code">Your Code</label>
-                                    <textarea class="form-control" id="code" name="problem_code" rows="10"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="language">Language</label>
-                                    <select class="form-control" name="language" id="language">
-                                        <option value="java">Java</option>
-                                        <option value="javascript">Javascript</option>
-                                        <option value="c">C/C++</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <button class="btn btn-primary submit" type="submit">Check Solution</button>
-                                </div>
-                            </form>
-                            <?
-                        } else {
-                            ?>
-                            <h2>There are no ongoing competitions to submit a solution for.</h2>
-                            <?
-                        }
-                        ?>
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                      </div>
                     </div>
-                    <div class="col-md-6 messages">
 
-                    </div>
-                </div>
+                              <div class="form-group">
+                                  <label for="code">Your Code</label>
+                                  <!--<textarea class="form-control" id="code" name="problem_code" rows="10"></textarea>-->
+                                  <div class="embed-responsive embed-responsive-4by3">
+                                    <pre class="embed-responsive-item" id="editor" name="problem_code"></pre>
+                                  </div>
+
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="language">Language</label>
+                                  <select class="form-control" name="language" id="language" onchange="changeLanguage()">
+                                      <option value="java">Java</option>
+                                      <option value="javascript">Javascript</option>
+                                      <option value="c">C/C++</option>
+                                  </select>
+                              </div>
+
+                              <div class="form-group">
+                                  <button class="btn btn-primary submit" type="submit">Check Solution</button>
+                              </div>
+                        </form>
+                          <?
+                      } else {
+                          ?>
+                          <h2>There are no ongoing competitions to submit a solution for.</h2>
+                          <?
+                      }
+                      ?>
+                  </div>
+                  <div class="col-md-4 messages">
+
+                  </div>
+              </div>
             </div>
         </div>
 
@@ -147,5 +155,12 @@ $problems = array();
 
     <script src="../js/solve.js"></script>
     <script src="../js/liveEvents.js"></script>
+
+    <!-- load ace -->
+    <script src="./src/ace.js"></script>
+    <!-- load ace language tools -->
+    <script src="./src/ext-language_tools.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
