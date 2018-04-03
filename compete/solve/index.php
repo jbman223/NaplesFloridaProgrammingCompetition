@@ -56,6 +56,7 @@ $problems = array();
                     <div class="row">
                       <div class="col-md-12">
                         <?
+                        $section_id = 0;
                         if (count($sections) > 0) {
                             ?>
                             <div class="form-group">
@@ -67,6 +68,7 @@ $problems = array();
 
 
                                     foreach ($sections as $section) {
+                                        $section_id = $section['id'];
                                         $state->execute(array($section['id']));
                                         $problem = $state->fetchAll(PDO::FETCH_ASSOC);
                                         $problems = array_merge($problems, $problem);
@@ -84,9 +86,9 @@ $problems = array();
                                 <label for="problemID">Select Problem - <a href="#" id="competitor_view">View Problem Description</a></label>
                                 <select class="form-control" id="problemID" name="problem_id">
                                     <?
-                                    $state = $db->prepare("select * from solved_problems where team_id = ? and problem_id = ? and correct = 1 and section_id <> 7");
+                                    $state = $db->prepare("select * from solved_problems where team_id = ? and problem_id = ? and correct = 1 and section_id <> ?");
                                     foreach ($problems as $problem) {
-                                        $state->execute(array($user['id'], $problem['id']));
+                                        $state->execute(array($user['id'], $problem['id'], $section_id));
 
                                         if (count($state->fetchAll(PDO::FETCH_ASSOC)) == 0) {
                                             ?>
