@@ -7,8 +7,6 @@ if (!isUserLoggedIn()) {
 if (!$user['admin']) {
     header("Location: ../../../account/login.php");
 }
-if (!isset($_GET['id'])) {
-    header("Location: ../competitionList.php");
-}
+
 
 ?>
