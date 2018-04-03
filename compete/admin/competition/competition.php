@@ -101,8 +101,8 @@ $problems = $state->fetchAll(PDO::FETCH_ASSOC);
 
                         <small>Print Resources</small>
 
-                        <a href="http://programmingcompetition.org/competitionSite/test.php" class="btn btn-block btn-default">User Logins</a>
-                        <a href="http://programmingcompetition.org/competitionSite/test2.php" class="btn btn-block btn-default">Registration Sheet</a>
+                        <a href="print/user_logins.php" class="btn btn-block btn-default">User Logins</a>
+                        <a href="print/registration_sheet.php" class="btn btn-block btn-default">Registration Sheet</a>
 
                         <br />
 
