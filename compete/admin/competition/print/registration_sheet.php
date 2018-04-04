@@ -8,7 +8,7 @@ if (!$user['admin']) {
     header("Location: ../../../account/login.php");
 }
 
-$state = $db->prepare("SELECT c.f_name, c.l_name, c.school, t.team_name, t.backendLogin, t.backendPassword FROM competitors c JOIN `teams` ON c.team_id = t.id where t.admin = 0 and t.deleted = 0 and c.deleted = 0 ORDER BY t.team_name");
+$state = $db->prepare("SELECT c.f_name, c.l_name, c.school, t.team_name, t.backendLogin, t.backendPassword FROM competitors c JOIN `teams` t ON c.team_id = t.id where t.admin = 0 and t.deleted = 0 and c.deleted = 0 ORDER BY t.team_name");
 $state->execute();
 $teams = $state->fetchAll(PDO::FETCH_ASSOC);
 ?>
