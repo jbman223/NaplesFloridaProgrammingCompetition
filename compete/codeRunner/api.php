@@ -14,7 +14,7 @@ if (isset($_POST['code'], $_POST['input'], $_POST['language'])) {
     $input = $_POST['input'];
 
     $header = array('Content-Type' => 'application/json');
-    $response = Requests::post($url, $header, json_encode(array("language" => $language, "code" => $code, "stdins" => explode("\n", $input))));
+    $response = Requests::post($url, $header, json_encode(array("language" => $language, "code" => $code, "stdins" => [$input])));
     die($response->body);
 }
 

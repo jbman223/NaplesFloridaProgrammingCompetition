@@ -15,7 +15,7 @@ function run($lang, $input, $code)
     $response = Requests::post($url, $header, json_encode(array(
         "language" => $language, 
         "code" => $code, 
-        "stdins" => explode("\n", $input))));
+        "stdins" => [$input])));
 
     //$body = json_decode($response->body);
     //$body->errors = preg_replace('/Note:.+/g', '', $body->errors);
