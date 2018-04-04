@@ -50,6 +50,9 @@ if (!$user['admin']) {
                         <a href="problem"><h2>Problem Center</h2></a>
                     </div>
                     <div class="col-md-3">
+                        <a href="quiz"><h2>Quiz Center</h2></a>
+                    </div>
+                    <div class="col-md-3">
                         <a href="competition"><h2>Competition Manager</h2></a>
                     </div>
                 </div>
