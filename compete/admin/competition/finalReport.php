@@ -8,12 +8,13 @@ if (!isUserLoggedIn()) {
 if (!$user['admin']) {
     header("Location: ../../account/login.php");
 }
-if (!isset($_GET['id1'], $_GET['id2'])) {
+if (!isset($_GET['id1'], $_GET['id2'], $_GET['id3'])) {
     header("Location: competitionList.php");
 }
 
 $sb1 = generateScoreboard($_GET['id1']);
 $sb2 = generateScoreboard($_GET['id2']);
+$db3 = generateScoreboardQuiz($_GET['id3']);
 
 $totalSB = array();
 
@@ -22,6 +23,10 @@ foreach ($sb1 as $team => $points) {
 }
 
 foreach ($sb2 as $team => $points) {
+    $totalSB[$team] += $points;
+}
+
+foreach ($sb3 as $team => $points) {
     $totalSB[$team] += $points;
 }
 
@@ -73,6 +78,7 @@ asort($totalSB);
                                 <th>Team Name</th>
                                 <th>Speed Round</th>
                                 <th>AP Round</th>
+                                <th>MCQ Round</th>
                                 <th>Total</th>
                             </tr>
 
@@ -84,6 +90,7 @@ asort($totalSB);
                                     <td><? echo $team; ?></td>
                                     <td><? echo $sb1[$team]; ?></td>
                                     <td><? echo $sb2[$team]; ?></td>
+                                    <td><? echo $sb3[$team]; ?></td>
                                     <td><? echo $totalPoints; ?></td>
                                 </tr>
                                 <?
