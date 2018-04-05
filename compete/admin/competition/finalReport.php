@@ -14,7 +14,7 @@ if (!isset($_GET['id1'], $_GET['id2'], $_GET['id3'])) {
 
 $sb1 = generateScoreboard($_GET['id1']);
 $sb2 = generateScoreboard($_GET['id2']);
-$db3 = generateScoreboardQuiz($_GET['id3']);
+$sb3 = generateScoreboardQuiz($_GET['id3']);
 
 $totalSB = array();
 
