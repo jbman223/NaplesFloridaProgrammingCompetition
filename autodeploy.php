@@ -18,7 +18,7 @@ if ($payload->ref == "refs/heads/master") {
 
 
 fwrite($log, json_encode($payload));
-fwrite($log, $out);
+fwrite($log, print_r($out, true));
 fwrite($log, "\n");
 fflush($log);
 fclose($log);
