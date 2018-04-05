@@ -9,7 +9,7 @@ if (!$user['admin']) {
     header("Location: ../../account/login.php");
 }
 if (!isset($_GET['id1'], $_GET['id2'], $_GET['id3'])) {
-    header("Location: competitionList.php");
+    //header("Location: competitionList.php");
 }
 
 $sb1 = generateScoreboard($_GET['id1']);
