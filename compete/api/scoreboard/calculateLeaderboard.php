@@ -56,3 +56,50 @@ function generateScoreboard($sectionID)
 
     return $points;
 }
+
+function generateScoreboardQuiz($quizId)
+{
+    global $db;
+
+    $state = $db->prepare("select * from quizzes where id = ?");
+    $state->execute(array($quizId));
+
+    $quiz = $state->fetchAll(PDO::FETCH_ASSOC);
+    if (count($quiz) == 0) {
+        die('error');
+    }
+    $quiz = $quiz[0];
+
+    $state = $db->prepare("select * from quiz_questions where quiz_id = ?");
+    $state->execute(array($quiz['id']));
+    $questions = $state->fetchAll(PDO::FETCH_ASSOC);
+    $question_count = count($questions);
+
+    //get teams
+    $state = $db->prepare("select * from teams where deleted = 0");
+    $state->execute();
+    $teams = $state->fetchAll(PDO::FETCH_ASSOC);
+
+
+    $divisor = 4;
+    $base_score = $question_count * (4 / $divisor);
+
+    $correctState = $db->prepare("select * from quiz_answers qa inner join quiz_questions qq on qq.id = qa.quiz_question_id where qq.quiz_id = ? and team_id = ? and status = 1");
+    $incorrectState = $db->prepare("select * from quiz_answers qa inner join quiz_questions qq on qq.id = qa.quiz_question_id where qq.quiz_id = ? and team_id = ? and status = -1");
+    $points = array();
+
+    foreach ($teams as $team) {
+        $correctState->execute(array($quiz['id'], $team['id']));
+        $correct = $correctState->fetchAll(PDO::FETCH_ASSOC);
+        $correct_count = count($correct);
+        $incorrectState->execute(array($quiz['id'], $team['id']));
+        $incorrect = $incorrectState->fetchAll(PDO::FETCH_ASSOC);
+        $incorrect_count = count($incorrect);
+
+        $points[$team['team_name']] = $base_score - ($correct_count * (4 / $divisor)) + ($incorrect_count / $divisor);
+    }
+
+    asort($points);
+
+    return $points;
+}

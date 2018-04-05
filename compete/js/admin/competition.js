@@ -50,6 +50,23 @@ $(".add-problem").submit(function (e) {
     }, "json");
 });
 
+$(".add-quiz").submit(function (e) {
+    e.preventDefault();
+
+    var section_id = $(this).find("select[name=section_id]").val();
+    var quiz_id = $(this).find("select[name=quiz_id]").val();
+    $.post("../../api/admin/competition/addQuiz.php", {
+        section_id: section_id,
+        quiz_id: quiz_id
+    }, function (data) {
+        if (data.error) {
+            $(this).parent().find("alert").text(data.error).show();
+        } else {
+            window.location.reload();
+        }
+    }, "json");
+});
+
 $(".rescore").click(function (e) {
     e.preventDefault();
     var clicked = $(this);

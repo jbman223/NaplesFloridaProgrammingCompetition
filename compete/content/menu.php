@@ -21,6 +21,7 @@
                 <li><a href="/compete/index.php">Home</a></li>
                 <li><a href="/compete/solve">Solve Problems</a></li>
                 <li><a href="/compete/problems">Problem List</a></li>
+                <li><a href="/compete/quiz">Quizzes</a></li>
                 <li><a href="/compete/forum">Clarifications</a></li>
                 <li><a href="/compete/leaderboard">Leader Board</a></li>
                 <li><a href="/compete/references">References</a></li>

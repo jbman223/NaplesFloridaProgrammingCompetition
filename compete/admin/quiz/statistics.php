@@ -48,7 +48,7 @@ $base_score = $question_count * (4 / $divisor);
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
 
-    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
+    <script src="/compete/jquery.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
 
