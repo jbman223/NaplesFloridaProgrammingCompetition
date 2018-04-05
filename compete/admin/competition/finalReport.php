@@ -73,6 +73,8 @@ asort($totalSB);
                 <!-- PAGE CONTENT HERE -->
                 <div class="row">
                     <div class="col-md-12">
+
+                        <code><pre><?php var_dump($sb3); ?></pre></code>
                         <table class="table table-bordered">
                             <tr>
                                 <th>Team Name</th>
