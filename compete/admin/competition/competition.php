@@ -29,6 +29,11 @@ $competitionSections = $state->fetchAll(PDO::FETCH_ASSOC);
 $state = $db->prepare("select problems.id, problem_data.id as problem_id, problem_data.problem_title, sections.section_name, sections.id as section_id from competition_section_problems problems inner join competition_sections sections on sections.id = problems.section_id inner join problem_data problem_data on problem_data.id = problems.problem_id  where sections.competition_id = ? and problems.removed = false");
 $state->execute(array($competition['id']));
 $problems = $state->fetchAll(PDO::FETCH_ASSOC);
+
+
+$state = $db->prepare("select *, sq.id as 'sqid' from section_quizzes sq inner join competition_sections sections on sections.id = sq.section_id inner join quizzes q on q.id = sq.quiz_id where sections.competition_id = ? and sq.removed = false");
+$state->execute(array($competition['id']));
+$quizzes = $state->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -44,10 +49,10 @@ $problems = $state->fetchAll(PDO::FETCH_ASSOC);
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/compete/jquery.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
 
-    <script src="http://159.203.168.143:8080/socket.io/socket.io.js"></script>
+    <script src="http://ws.programmingcompetition.org:8080/socket.io/socket.io.js"></script>
 
     <? echo $gaCode; ?>
 </head>
@@ -101,12 +106,12 @@ $problems = $state->fetchAll(PDO::FETCH_ASSOC);
 
                         <small>Print Resources</small>
 
-                        <a href="print/user_logins.php" class="btn btn-block btn-default">User Logins</a>
-                        <a href="print/registration_sheet.php" class="btn btn-block btn-default">Registration Sheet</a>
+                        <a href="http://programmingcompetition.org/competitionSite/test.php" class="btn btn-block btn-default">User Logins</a>
+                        <a href="http://programmingcompetition.org/competitionSite/test2.php" class="btn btn-block btn-default">Registration Sheet</a>
 
                         <br />
 
-                        <a href="finalReport.php?id1=8&id2=9" class="btn btn-block btn-success">Final Score Sheet</a>
+                        <a href="finalReport.php?id1=11&id2=1" class="btn btn-block btn-success">Final Score Sheet</a>
 
                     </div>
 
@@ -291,6 +296,106 @@ $problems = $state->fetchAll(PDO::FETCH_ASSOC);
 
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-success">Add Problem</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Quizzes</h3>
+                            </div>
+                            <div class="panel-body">
+                                <?
+                                if (count($quizzes) > 0) {
+
+                                    ?>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Quiz Name</th>
+                                            <th>Section Name</th>
+                                            <th>Statistics</th>
+                                            <th>Remove Quiz</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <?
+
+                                        foreach ($quizzes as $quiz) {
+                                            ?>
+
+                                            <tr>
+                                                <td><a href="../quiz/quiz.php?id=<? echo $quiz['quiz_id']; ?>"><? echo $quiz['quiz_name']; ?></a></td>
+                                                <td><? echo $quiz['section_name']; ?></td>
+                                                <td><a href="../quiz/statistics.php?id=<? echo $quiz['quiz_id']; ?>">Statistics</a></td>
+                                                <td><a href="removeQuiz.php?id=<? echo $quiz['sqid'] ?>&competition_id=<? echo $competition['id']; ?>" class="btn btn-danger btn-sm">Remove</a></td>
+                                            </tr>
+
+                                            <?
+                                        }
+
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                    <?
+
+                                } else {
+                                    ?>
+                                    <h3>No quizzes found.</h3>
+                                    <?
+                                }
+                                ?>
+
+                                <div style="margin-top: 15px;border-top:solid #ddd 1px;padding-top:5px;">
+
+                                    <h3 style="margin-top:0;">Add A Quiz</h3>
+
+                                    <div class="alert alert-danger" style="margin-bottom: 5px;display: none;">
+
+                                    </div>
+
+                                    <form class="form-inline add-quiz">
+
+                                        <div class="form-group">
+                                            <label for="section_id">Section</label>
+                                            <select class="form-control" name="section_id" id="section_id"
+                                                    style="width:200px;">
+                                                <?
+                                                foreach ($competitionSections as $section) {
+                                                    ?>
+                                                    <option
+                                                            value="<? echo $section['id']; ?>"><? echo $section['section_name']; ?></option>
+                                                    <?
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="quiz_id">Quiz</label>
+                                            <select class="form-control" name="quiz_id" id="quiz_id"
+                                                    style="width:200px;">
+                                                <?
+                                                $state = $db->prepare("select * from quizzes where removed = false");
+                                                $state->execute();
+
+                                                $problems = $state->fetchAll(PDO::FETCH_ASSOC);
+
+                                                foreach ($problems as $problem) {
+                                                    ?>
+                                                    <option
+                                                            value="<? echo $problem['id']; ?>"><? echo $problem['quiz_name']; ?></option>
+                                                    <?
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success">Add Quiz</button>
                                         </div>
                                     </form>
                                 </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 11, 2017 at 10:38 AM
+-- Generation Time: Apr 04, 2018 at 06:58 PM
 -- Server version: 5.5.38-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `code_results` (
   `output` text NOT NULL,
   `run_time` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=625 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1467 ;
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `competitions` (
   `competition_notes` varchar(400) NOT NULL,
   `removed` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `competition_sections` (
   `end` int(11) NOT NULL,
   `removed` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `competition_section_problems` (
   `section_id` int(11) NOT NULL,
   `removed` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=92 ;
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `competition_section_scoreboards` (
   `scoreboard_data` blob NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `section_id` (`section_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `competitors` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=105 ;
 
 -- --------------------------------------------------------
 
@@ -190,7 +190,20 @@ CREATE TABLE IF NOT EXISTS `edu_problem_state` (
   `code` text NOT NULL,
   `time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=144 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcq`
+--
+
+CREATE TABLE IF NOT EXISTS `mcq` (
+  `id` int(11) NOT NULL,
+  `answers` varchar(255) NOT NULL,
+  `correct` varchar(255) NOT NULL,
+  `score` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -220,23 +233,67 @@ CREATE TABLE IF NOT EXISTS `problems` (
 
 CREATE TABLE IF NOT EXISTS `problem_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `problem_title` varchar(255) NOT NULL,
-  `problem_description` text NOT NULL,
-  `problem_sample_input` text NOT NULL,
-  `problem_sample_output` varchar(2500) NOT NULL,
-  `problem_input` varchar(2500) NOT NULL,
-  `problem_output` varchar(2500) NOT NULL,
-  `problem_output_trimmed` varchar(2500) NOT NULL,
-  `problem_output_hash` varchar(48) NOT NULL,
-  `problem_code` text NOT NULL,
-  `problem_code_hash` varchar(64) NOT NULL,
+  `problem_title` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `problem_description` mediumtext COLLATE utf8mb4_bin NOT NULL,
+  `problem_sample_input` mediumtext COLLATE utf8mb4_bin NOT NULL,
+  `problem_sample_output` varchar(2500) COLLATE utf8mb4_bin NOT NULL,
+  `problem_input` varchar(2500) COLLATE utf8mb4_bin NOT NULL,
+  `problem_output` varchar(2500) COLLATE utf8mb4_bin NOT NULL,
+  `problem_output_trimmed` varchar(2500) COLLATE utf8mb4_bin NOT NULL,
+  `problem_output_hash` varchar(48) COLLATE utf8mb4_bin NOT NULL,
+  `problem_code` mediumtext COLLATE utf8mb4_bin NOT NULL,
+  `problem_code_hash` varchar(64) COLLATE utf8mb4_bin NOT NULL,
   `problem_code_ran` int(11) NOT NULL DEFAULT '0',
   `problem_code_result` int(11) NOT NULL,
   `problem_code_status` int(11) NOT NULL DEFAULT '0',
   `problem_status` int(11) NOT NULL,
   `removed` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=45 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quizzes`
+--
+
+CREATE TABLE IF NOT EXISTS `quizzes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `quiz_name` varchar(255) NOT NULL,
+  `removed` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz_answers`
+--
+
+CREATE TABLE IF NOT EXISTS `quiz_answers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `team_id` int(11) NOT NULL,
+  `quiz_question_id` int(11) NOT NULL,
+  `answer` varchar(1) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=304 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz_questions`
+--
+
+CREATE TABLE IF NOT EXISTS `quiz_questions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author` varchar(255) NOT NULL,
+  `picture` varchar(255) NOT NULL,
+  `answer` varchar(1) NOT NULL,
+  `quiz_id` int(11) NOT NULL,
+  `removed` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=44 ;
 
 -- --------------------------------------------------------
 
@@ -252,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `replies` (
   `post_time` int(11) NOT NULL,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=96 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=128 ;
 
 -- --------------------------------------------------------
 
@@ -311,6 +368,20 @@ CREATE TABLE IF NOT EXISTS `scoreboards` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `section_quizzes`
+--
+
+CREATE TABLE IF NOT EXISTS `section_quizzes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_id` int(11) NOT NULL,
+  `quiz_id` int(11) NOT NULL,
+  `removed` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `solved_problems`
 --
 
@@ -325,7 +396,7 @@ CREATE TABLE IF NOT EXISTS `solved_problems` (
   `correct` tinyint(1) NOT NULL DEFAULT '0',
   `approved` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=500 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1218 ;
 
 -- --------------------------------------------------------
 
@@ -359,7 +430,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `quick_access_code` varchar(50) NOT NULL DEFAULT 'none',
   `admin` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 -- --------------------------------------------------------
 
@@ -379,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `threads` (
   `solved` tinyint(1) NOT NULL DEFAULT '0',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
 
 -- --------------------------------------------------------
 
@@ -400,7 +471,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password_reset_time` int(11) NOT NULL,
   `level` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
 
 -- --------------------------------------------------------
 
@@ -416,7 +487,7 @@ CREATE TABLE IF NOT EXISTS `verification` (
   `type` int(1) NOT NULL DEFAULT '0',
   `complete` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
