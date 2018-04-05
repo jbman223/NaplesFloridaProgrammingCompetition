@@ -12,7 +12,7 @@ if (!isset($_GET['id'])) {
     header("Location: competitionList.php");
 }
 
-$state = $db->prepare("select pd.* from problem_data pd inner join competition_section_problems csp on csp.problem_id = pd.id where csp.section_id = ?");
+$state = $db->prepare("select pd.* from problem_data pd inner join competition_section_problems csp on csp.problem_id = pd.id where csp.section_id = ? and csp.deleted = 0");
 $state->execute(array($_GET['id']));
 
 $problems = $state->fetchAll(PDO::FETCH_ASSOC);
