@@ -11,6 +11,7 @@ $state->execute(array(time(), time()));
 $sections = $state->fetchAll(PDO::FETCH_ASSOC);
 
 $problems = array();
+$section_id = 0;
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +57,6 @@ $problems = array();
                     <div class="row">
                       <div class="col-md-12">
                         <?
-                        $section_id = 0;
                         if (count($sections) > 0) {
                             ?>
                             <div class="form-group">
