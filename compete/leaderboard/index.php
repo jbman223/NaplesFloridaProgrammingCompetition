@@ -5,7 +5,7 @@ if (!isUserLoggedIn()) {
     header("Location: ../account/login.php");
 }
 
-$state = $db->prepare("select * from competition_sections where start <= ? and `end` >= ?");
+$state = $db->prepare("select * from competition_sections where start <= ? and `end` >= ? and removed = 0");
 $state->execute(array(time(), time()));
 $sections = $state->fetchAll(PDO::FETCH_ASSOC);
 ?>
