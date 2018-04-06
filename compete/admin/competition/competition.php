@@ -108,6 +108,7 @@ $quizzes = $state->fetchAll(PDO::FETCH_ASSOC);
 
                         <a href="print/user_logins.php" class="btn btn-block btn-default">User Logins</a>
                         <a href="print/registration_sheet.php" class="btn btn-block btn-default">Registration Sheet</a>
+                        <a href="print/folder_sheet.php" class="btn btn-block btn-default">Folder Sheet</a>
 
                         <br />
 
