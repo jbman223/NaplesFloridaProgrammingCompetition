@@ -76,7 +76,7 @@ $sections = $state->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="tab-content">
                                     <?
                                     $first = true;
-                                    $state = $db->prepare("select pd.problem_title, pd.id from competition_section_problems csp inner join problem_data pd on pd.id = csp.problem_id where csp.section_id = ?");
+                                    $state = $db->prepare("select pd.problem_title, pd.id from competition_section_problems csp inner join problem_data pd on pd.id = csp.problem_id where csp.section_id = ? and csp.removed = 0");
                                     foreach ($sections as $section) {
 
                                         ?>
