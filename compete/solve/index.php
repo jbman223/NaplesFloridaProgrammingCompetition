@@ -83,10 +83,10 @@ $section_id = 0;
                             </div>
 
                             <div class="form-group">
+                            <?php echo ($section_id); ?>
                                 <label for="problemID">Select Problem - <a href="#" id="competitor_view">View Problem Description</a></label>
                                 <select class="form-control" id="problemID" name="problem_id">
-                                    <?
-                                    echo $section_id;
+                                    <?php
                                     $state = $db->prepare("select * from solved_problems where team_id = ? and problem_id = ? and correct = 1 and section_id <> ?");
                                     foreach ($problems as $problem) {
                                         $state->execute(array($user['id'], $problem['id'], $section_id));
