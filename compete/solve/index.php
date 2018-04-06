@@ -63,7 +63,7 @@ $section_id = 0;
                                 <label for="competitionSection">Select Competition</label>
                                 <select class="form-control" id="competitionSection" name="competition_section">
                                     <?
-                                    $state = $db->prepare("select pd.problem_title, pd.id, csp.section_id as section_id from competition_section_problems csp inner join problem_data pd on csp.problem_id = pd.id where csp.section_id = ? ");
+                                    $state = $db->prepare("select pd.problem_title, pd.id, csp.section_id as section_id from competition_section_problems csp inner join problem_data pd on csp.problem_id = pd.id where csp.section_id = ? and csp.removed = 0");
 
 
 
@@ -83,7 +83,6 @@ $section_id = 0;
                             </div>
 
                             <div class="form-group">
-                            <?php echo ($section_id); ?>
                                 <label for="problemID">Select Problem - <a href="#" id="competitor_view">View Problem Description</a></label>
                                 <select class="form-control" id="problemID" name="problem_id">
                                     <?php
