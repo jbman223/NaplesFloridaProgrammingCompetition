@@ -6,7 +6,7 @@ $(function () {
 });
 
 function addVideo() {
-    $("body").append('<iframe style="width:100%;height:100%;z-index:1000;position:absolute;top:0;left:0;" src="https://www.youtube.com/embed/MnLgznbq3dM?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>')
+    $("body").append('<iframe style="width:100%;height:100%;z-index:1000;position:absolute;top:0;left:0;" src="https://www.youtube.com/embed/EJwwSlT_-Ag?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>')
 }
 
 function loadLeaders(sectionID) {
