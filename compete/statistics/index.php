@@ -97,7 +97,7 @@ if (isset($_GET['access_code'])) {
                         <div class="text-center"
                              style="width: 100%;height: 300px; background: url('/images/index/IMG_8289.jpg') no-repeat left; background-size: auto 300px; border-radius: 10px; color: white;display: flex; justify-content:center; align-content:center; flex-direction:column;">
                             <h1><a href="/2016" style="color: white;text-shadow:1px 1px 3px rgba(0, 0, 0, 0.5);">View
-                                    2016 Year's Story</a></h1>
+                                    2016 Story</a></h1>
                         </div>
                     </div>
 
@@ -105,7 +105,7 @@ if (isset($_GET['access_code'])) {
 
                         <h3>Press Information</h3>
 
-                        <a href="/downloads/2016/Naples%20Florida%20Programming%20Competition%202016.docx"
+                        <a href="/downloads/2018/Naples%20Florida%20Programming%20Competition%202018.docx"
                            target="_blank" class="btn btn-default btn-block"><span
                                 class="glyphicon glyphicon-download"></span> Press Release</a>
                         <a href="/downloads/2016/Competitors.xlsx" target="_blank"
