@@ -68,8 +68,8 @@ if (isset($_GET['access_code'])) {
                             Thanks to everybody who came to make the 2018 Naples Florida Programming Competition the
                             best one yet. We are very happy with this year's outcome, and we look forward to helping
                             this event continue and grow in the community for many years to come. If you would like to
-                            get in touch with Jacob about the event, please email <a
-                                href="mailto:jbuckheit2016@communityschoolofnaples.org">jbuckheit2016@communityschoolofnaples.org</a>.
+                            get in touch with Michael about the event, please email <a
+                                href="mailto:mfoiani2019@communityschoolnaples.org">mfoiani2019@communityschoolnaples.org</a>.
                             Below, you can find details of all the problems from this year's competition, along with the
                             sample solution code. Sign in to see your code.
                         </p>
@@ -85,9 +85,9 @@ if (isset($_GET['access_code'])) {
                         <a href="/downloads/2016/Competitors.xlsx" target="_blank"
                            class="btn btn-success btn-block"><span
                                 class="glyphicon glyphicon-user"></span> Result Sheet</a>
-                        <a href="https://www.dropbox.com/sh/4gchw7i3ax04kv4/AAByyzWdm9KN1b6N9OWzXEU8a?dl=0"
+                        <!-- <a href="https://www.dropbox.com/sh/4gchw7i3ax04kv4/AAByyzWdm9KN1b6N9OWzXEU8a?dl=0"
                            target="_blank" class="btn btn-info btn-block"><span
-                                class="glyphicon glyphicon-picture"></span> Photo Album</a>
+                                class="glyphicon glyphicon-picture"></span> Photo Album</a> -->
                         <a href="https://youtu.be/HXhp5_1_EuQ" target="_blank" class="btn btn-danger btn-block"><span
                                 class="glyphicon glyphicon-play-circle"></span> View Site Tutorial</a>
 
@@ -97,7 +97,7 @@ if (isset($_GET['access_code'])) {
                         <div class="text-center"
                              style="width: 100%;height: 300px; background: url('/images/index/IMG_8289.jpg') no-repeat left; background-size: auto 300px; border-radius: 10px; color: white;display: flex; justify-content:center; align-content:center; flex-direction:column;">
                             <h1><a href="/2016" style="color: white;text-shadow:1px 1px 3px rgba(0, 0, 0, 0.5);">View
-                                    This Year's Story</a></h1>
+                                    2016 Year's Story</a></h1>
                         </div>
                     </div>
 
