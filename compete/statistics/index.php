@@ -82,7 +82,7 @@ if (isset($_GET['access_code'])) {
                         <a href="/downloads/2018/Naples%20Florida%20Programming%20Competition%202018.docx"
                            target="_blank" class="btn btn-default btn-block"><span
                                 class="glyphicon glyphicon-download"></span> Press Release</a>
-                        <a href="/downloads/2016/Competitors.xlsx" target="_blank"
+                        <a href="/downloads/2018/competitors.xlsx" target="_blank"
                            class="btn btn-success btn-block"><span
                                 class="glyphicon glyphicon-user"></span> Result Sheet</a>
                         <!-- <a href="https://www.dropbox.com/sh/4gchw7i3ax04kv4/AAByyzWdm9KN1b6N9OWzXEU8a?dl=0"
@@ -108,12 +108,12 @@ if (isset($_GET['access_code'])) {
                         <a href="/downloads/2018/Naples%20Florida%20Programming%20Competition%202018.docx"
                            target="_blank" class="btn btn-default btn-block"><span
                                 class="glyphicon glyphicon-download"></span> Press Release</a>
-                        <a href="/downloads/2016/Competitors.xlsx" target="_blank"
+                        <a href="/downloads/2018/competitors.xlsx" target="_blank"
                            class="btn btn-success btn-block"><span
                                 class="glyphicon glyphicon-user"></span> Result Sheet & Competitors</a>
-                        <a href="https://www.dropbox.com/sh/4gchw7i3ax04kv4/AAByyzWdm9KN1b6N9OWzXEU8a?dl=0"
+                        <!-- <a href="https://www.dropbox.com/sh/4gchw7i3ax04kv4/AAByyzWdm9KN1b6N9OWzXEU8a?dl=0"
                            target="_blank" class="btn btn-info btn-block"><span
-                                class="glyphicon glyphicon-picture"></span> Photo Album</a>
+                                class="glyphicon glyphicon-picture"></span> Photo Album</a> -->
                         <a href="https://youtu.be/HXhp5_1_EuQ" target="_blank" class="btn btn-danger btn-block"><span
                                 class="glyphicon glyphicon-play-circle"></span> View Site Tutorial</a>
 
