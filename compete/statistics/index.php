@@ -58,14 +58,14 @@ if (isset($_GET['access_code'])) {
                 <div class="row">
                     <div class="col-md-12">
                         <!-- PAGE CONTENT HERE -->
-                        <h1>2016 NFPC Review</h1>
+                        <h1>2018 NFPC Review</h1>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-5 col-sm-12 col-xs-12">
                         <p class="lead text-justify">
-                            Thanks to everybody who came to make the 2016 Naples Florida Programming Competition the
+                            Thanks to everybody who came to make the 2018 Naples Florida Programming Competition the
                             best one yet. We are very happy with this year's outcome, and we look forward to helping
                             this event continue and grow in the community for many years to come. If you would like to
                             get in touch with Jacob about the event, please email <a

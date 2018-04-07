@@ -98,6 +98,8 @@ function generateScoreboardQuiz($quizId)
         $incorrect_count = count($incorrect);
 
         $points[$team['team_name']] = ($base_score - ($correct_count * (4 / $divisor)) + ($incorrect_count / $divisor))*$multiplier;
+        $points[$team['team_name']] = ($base_score - ($correct_count * (4 / $divisor)) + (0))*$multiplier;
+
     }
 
     asort($points);
