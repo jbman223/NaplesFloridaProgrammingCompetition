@@ -3,8 +3,8 @@ function generateScoreboard($sectionID)
 {
     global $db;
 
-    if ($sectionID == 9)
-        $base = 10;
+    if ($sectionID == 18)
+        $base = 50;
     else
         $base = 10;
 
