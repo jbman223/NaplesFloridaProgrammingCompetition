@@ -125,7 +125,7 @@ if (isset($_GET['access_code'])) {
                 <div class="row">
                     <div class="col-md-12">
                         <?
-                        $state = $db->prepare("select * from competition_sections where removed = 0");
+                        $state = $db->prepare("select * from competition_sections where id in (16, 17, 18)");
                         $state->execute();
                         $sections = $state->fetchAll(PDO::FETCH_ASSOC);
 
