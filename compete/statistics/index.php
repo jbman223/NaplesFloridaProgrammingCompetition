@@ -79,7 +79,7 @@ if (isset($_GET['access_code'])) {
 
                         <h3>Press Information</h3>
 
-                        <a href="/downloads/2016/Naples%20Florida%20Programming%20Competition%202016.docx"
+                        <a href="/downloads/2018/Naples%20Florida%20Programming%20Competition%202018.docx"
                            target="_blank" class="btn btn-default btn-block"><span
                                 class="glyphicon glyphicon-download"></span> Press Release</a>
                         <a href="/downloads/2016/Competitors.xlsx" target="_blank"
