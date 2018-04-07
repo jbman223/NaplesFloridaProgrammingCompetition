@@ -82,7 +82,7 @@ function generateScoreboardQuiz($quizId)
 
 
     $divisor = 4;
-    $multiplier = 2;
+    $multiplier = 2.5;
     $base_score = $question_count * (4 / $divisor);
 
     $correctState = $db->prepare("select * from quiz_answers qa inner join quiz_questions qq on qq.id = qa.quiz_question_id where qq.quiz_id = ? and team_id = ? and status = 1");
