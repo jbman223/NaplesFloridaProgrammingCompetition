@@ -82,6 +82,7 @@ function generateScoreboardQuiz($quizId)
 
 
     $divisor = 4;
+    $multiplier = 2;
     $base_score = $question_count * (4 / $divisor);
 
     $correctState = $db->prepare("select * from quiz_answers qa inner join quiz_questions qq on qq.id = qa.quiz_question_id where qq.quiz_id = ? and team_id = ? and status = 1");
@@ -96,7 +97,7 @@ function generateScoreboardQuiz($quizId)
         $incorrect = $incorrectState->fetchAll(PDO::FETCH_ASSOC);
         $incorrect_count = count($incorrect);
 
-        $points[$team['team_name']] = $base_score - ($correct_count * (4 / $divisor)) + ($incorrect_count / $divisor);
+        $points[$team['team_name']] = ($base_score - ($correct_count * (4 / $divisor)) + ($incorrect_count / $divisor))*$multiplier;
     }
 
     asort($points);
