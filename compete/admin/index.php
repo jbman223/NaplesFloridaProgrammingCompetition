@@ -22,7 +22,7 @@ if (!$user['admin']) {
     <link rel="stylesheet" href="/css/site.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 
     <? echo $gaCode; ?>
@@ -48,6 +48,9 @@ if (!$user['admin']) {
                 <div class="row">
                     <div class="col-md-3">
                         <a href="problem"><h2>Problem Center</h2></a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="quiz"><h2>Quiz Center</h2></a>
                     </div>
                     <div class="col-md-3">
                         <a href="competition"><h2>Competition Manager</h2></a>

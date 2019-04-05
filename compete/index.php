@@ -18,10 +18,10 @@ if (!isUserLoggedIn()) {
     <link rel="stylesheet" href="css/site.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
-    <script src="http://159.203.168.143:8080/socket.io/socket.io.js"></script>
+    <script src="http://ws.programmingcompetition.org:8080/socket.io/socket.io.js"></script>
 
     <? echo $gaCode; ?>
 </head>
@@ -52,6 +52,7 @@ if (!isUserLoggedIn()) {
                 <div class="row">
                     <div class="col-md-4"><h2><a href="leaderboard">Leader Board</a></h2></div>
                     <div class="col-md-4"><h2><a href="references">References</a></h2></div>
+                    <div class="col-md-4"><h2><a href="quiz">Quizzes</a></h2></div>
                 </div>
             </div>
         </div>

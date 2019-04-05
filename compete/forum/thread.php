@@ -34,11 +34,11 @@ $replies = $state->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/site.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../js/jquery.timeago.js" type="text/javascript"></script>
 
-    <script src="http://159.203.168.143:8080/socket.io/socket.io.js"></script>
+    <script src="http://ws.programmingcompetition.org:8080/socket.io/socket.io.js"></script>
 
     <? echo $gaCode; ?>
 </head>

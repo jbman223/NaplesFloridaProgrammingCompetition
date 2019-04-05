@@ -1,6 +1,7 @@
 <?php
 
 require_once "content/require.php";
+require_once "../api/mailAPI.php";
 
 $state = $db->prepare("select email from users");
 $state->execute();
@@ -13,8 +14,8 @@ $state->execute();
 $competitors = $state->fetchAll(PDO::FETCH_COLUMN);
 
 $teachers = array(
-    "marcfarron@swfrtp.org",
-    "deborahjohnson.naples@gmail.com",
+    //"marcfarron@swfrtp.org",
+    //"deborahjohnson.naples@gmail.com",
     "RitaEE@LeeSchools.net",
     "PetersAd@collierschools.com",
     "greerc@collierschools.com",

@@ -7,7 +7,7 @@ function run($lang, $input, $code)
 {
     $languages = array("java" => 8, "c" => 7);
 
-    $url = "http://159.203.168.143/compile";
+    $url = "http://138.197.103.91/compile";
     $code = str_replace("public class", "class", $code);
     $language = $languages[$lang];
 

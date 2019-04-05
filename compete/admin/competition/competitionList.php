@@ -21,7 +21,7 @@ if (!$user['admin']) {
     <link rel="stylesheet" href="/css/site.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
 
     <? echo $gaCode; ?>

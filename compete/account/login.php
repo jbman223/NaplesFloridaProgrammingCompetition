@@ -17,10 +17,10 @@ if (isset($_SESSION['competition_site_id'])) {
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/site.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 
-    <script src="http://159.203.168.143:8080/socket.io/socket.io.js"></script>
+    <script src="http://ws.programmingcompetition.org:8080/socket.io/socket.io.js"></script>
 
     <? echo $gaCode; ?>
 </head>

@@ -1,0 +1,1 @@
+*.local, 169.254/16, programmingcompetition.org, ajax.googleapis.com, docs.oracle.com, www.open-std.org, *.microsoft.com, docs.python.org, *.cplusplus.com

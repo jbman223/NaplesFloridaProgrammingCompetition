@@ -44,10 +44,10 @@ if ($submission['team_id'] != $user['id']) {
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://programmingcompetition.org/compete/jquery.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 
-    <script src="http://159.203.168.143:8080/socket.io/socket.io.js"></script>
+    <script src="http://ws.programmingcompetition.org:8080/socket.io/socket.io.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
 

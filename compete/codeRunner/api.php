@@ -8,7 +8,7 @@ Requests::register_autoloader();
 $languages = array("java" => 8);
 
 if (isset($_POST['code'], $_POST['input'], $_POST['language'])) {
-    $url = "http://159.203.168.143/compile";
+    $url = "http://138.197.103.91/compile";
     $code = str_replace("public class", "class", $_POST['code']);
     $language = $languages[$_POST['language']];
     $input = $_POST['input'];

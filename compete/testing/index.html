@@ -5,8 +5,8 @@
     <title>Group Play</title>
 
     <script src="https://youtube.com/iframe_api"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://159.203.168.143:25565/socket.io/socket.io.js"></script>
+    <script src="https:http://programmingcompetition.org/compete/jquery.min.js"></script>
+    <script src="http://ws.programmingcompetition.org:25565/socket.io/socket.io.js"></script>
 
 </head>
 <body>
@@ -28,7 +28,7 @@
     var player;
     var preloading = false;
     var loaded = false;
-    var socket = io.connect("http://159.203.168.143:25565/");
+    var socket = io.connect("http://ws.programmingcompetition.org:25565/");
 
 
     function preload(videoId) {

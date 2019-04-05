@@ -24,6 +24,7 @@
                 <li><a href="/compete/forum">Clarifications</a></li>
                 <li><a href="/compete/leaderboard">Leader Board</a></li>
                 <li><a href="/compete/references">References</a></li>
+                <li><a href="/compete/quiz">Quizzes</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

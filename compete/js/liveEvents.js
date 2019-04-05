@@ -1,7 +1,7 @@
 /**
  * Created by Jacob on 4/19/16.
  */
-var socket = io.connect("http://159.203.168.143:8080/");
+var socket = io.connect("http://ws.programmingcompetition.org:8080/");
 
 var repeater;
 
