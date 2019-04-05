@@ -5,7 +5,7 @@ ignore_user_abort(true);
 Requests::register_autoloader();
 
 
-$languages = array("java" => "java", "javascript" => "javascript", "c" => "c");
+$languages = array("java" => "java", "javascript" => "javascript", "c" => "c", "python" => "python");
 
 if (isset($_POST['code'], $_POST['input'], $_POST['language'])) {
     $url = "http://159.203.191.58:31337/eval/";

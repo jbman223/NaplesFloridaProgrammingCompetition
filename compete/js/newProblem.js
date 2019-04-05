@@ -35,6 +35,7 @@ $(".create").submit(function (e) {
         }
     });
     postObj.type = "create_edu_problem";
+    postObj['problem_language'] = $('#problem_language').val();
     $(".create").hide("fast");
     $(".alert-danger").hide("fast");
     $(".alert-info").show("fast");

@@ -246,6 +246,16 @@ if (!$user['admin']) {
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="problem_language">Problem Solution Language</label>
+                                    <div class="col-md-6">
+                                        <select id="problem_language" name="problem_language">
+                                            <option value="python">Python</option>
+                                            <option value="java">Java</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <!-- Multiple Checkboxes -->
                                 <div class="form-group">
                                     <div class="col-md-2">

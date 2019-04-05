@@ -5,7 +5,7 @@ Requests::register_autoloader();
 
 function run($lang, $input, $code)
 {
-    $languages = array("java" => "java", "javascript" => "javascript", "c" => "c");
+    $languages = array("java" => "java", "javascript" => "javascript", "c" => "c", "python" => "python");
 
     $url = "http://159.203.191.58:31337/eval/";
     $code = str_replace("public class", "class", $code);

@@ -16,7 +16,7 @@ if (isset($_POST['id'])) {
     if (count($problem) == 1) {
         $problem = $problem[0];
         if ($problem["problem_code"] != "") {
-            $result = json_decode(run("java", $problem["problem_input"], $problem["problem_code"]));
+            $result = json_decode(run($problem["problem_code_language"], $problem["problem_input"], $problem["problem_code"]));
 
             if ($result == null) {
             die(json_encode(array("error" => "Result is null!")));
