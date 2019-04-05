@@ -245,6 +245,7 @@ $reviewers = $state->fetchAll(PDO::FETCH_ASSOC);
                             <div class="panel-body">
                                 <pre style="max-height: 200px; overflow-y:scroll;"><code class="java github"><? echo htmlspecialchars($problem['problem_code']); ?></code></pre>
                                 <p class="lead">
+                                    <b>Code Language: </b><? echo ucfirst($problem['problem_code_language']); ?><br />
                                     <b>Code Hash: </b><? echo $problem['problem_code_hash']; ?><br />
                                     <b>Code Ran: </b><? echo $problem['problem_code_ran'] == 1?"YES":"NO"; ?><br />
                                     <b>RESULTS:</b><br />
