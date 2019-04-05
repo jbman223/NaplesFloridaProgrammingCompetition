@@ -10,3 +10,4 @@ newSite/
 deploy.sh
 /docker
 gitlog.txt
+db.php
