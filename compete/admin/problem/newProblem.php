@@ -249,7 +249,7 @@ if (!$user['admin']) {
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="problem_language">Problem Solution Language</label>
                                     <div class="col-md-6">
-                                        <select id="problem_language" name="problem_language">
+                                        <select id="problem_language" name="problem_language" class="form-control">
                                             <option value="python">Python</option>
                                             <option value="java">Java</option>
                                         </select>

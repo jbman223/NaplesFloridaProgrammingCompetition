@@ -13,7 +13,7 @@ if (isset($_POST["problem_name"], $_POST["problem_description"], $_POST["problem
     $outputHash = md5($formattedOutput);
     $languages = array("java", "python");
 
-    if (in_array($_POST['problem_language'], $languages)) {
+    if (!in_array($_POST['problem_language'], $languages)) {
         die(json_encode(array("error" => "Language not supported.")));
     }
 
