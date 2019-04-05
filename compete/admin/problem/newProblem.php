@@ -63,7 +63,7 @@ if (!$user['admin']) {
                         </ol>
 
                         <h1 class="text-center">
-                            <? echo isset($_GET['id'])?"Create New":"Edit"; ?> Problem
+                            <? echo !isset($_GET['id'])?"Create New":"Edit"; ?> Problem
                         </h1>
                     </div>
                 </div>
