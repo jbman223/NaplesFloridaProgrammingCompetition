@@ -288,7 +288,8 @@ if (!$user['admin']) {
                                     <label class="col-md-2 control-label" for="submit"></label>
 
                                     <div class="col-md-4">
-                                        <button id="submit" name="submit" class="btn btn-primary">Create Problem
+                                        <button id="submit" name="submit" class="btn btn-primary">
+                                            <? echo !isset($_GET['id'])?"Create":"Update"; ?> Problem
                                         </button>
                                     </div>
                                 </div>
