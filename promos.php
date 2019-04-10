@@ -35,7 +35,7 @@ require_once "require.php";
 
                         <p class="text-muted small">DOWNLOAD POSTER:</p>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="FIX" target="_blank" type="button" class="btn btn-default">Print (Hi-Res)</a>
+                            <a href="https://drive.google.com/file/d/1AtX2DlJZ5t4vlrBK-o7YDo9jf5Yws_bO/view?usp=sharing" target="_blank" type="button" class="btn btn-default">Print (Hi-Res)</a>
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-6 col-xs-12 text-center">

@@ -50,8 +50,8 @@ require_once "includes/require.php";
                                 <h4 class="text-center">Competition Posters</h4>
                                 <p class="lead text-justify">
                                     The competition poster are available for download at full sized resolution.<br>
-                                    <a href="https://drive.google.com/open?id=1Vh0huRJC1FCw6DmqiRNIL3IKcUPJ7DxS" target="_blank"> Poster 1</a>
-                                    <a href="https://drive.google.com/open?id=1Ndf5CxpZyPLebfT3Za1B-7iB_14d9HfK" target="_blank">Poster 2</a>
+                                    <a href="https://drive.google.com/file/d/1AtX2DlJZ5t4vlrBK-o7YDo9jf5Yws_bO/view?usp=sharing" target="_blank"> Poster 1</a>
+                                    <a href="https://drive.google.com/file/d/1CZiPOzeAboOuLM8JoplLymkMGzRpD4hy/view?usp=sharing" target="_blank">Poster 2</a>
                                     <br>
                                 </p>
                             </div>
