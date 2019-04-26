@@ -118,6 +118,7 @@ $section_id = 0;
                                       <option value="java">Java</option>
                                       <option value="javascript">Javascript</option>
                                       <option value="c">C/C++</option>
+                                      <option value="python">Python 3</option>
                                   </select>
                               </div>
 
