@@ -48,26 +48,27 @@ require_once "includes/require.php";
                         <p><span class="glyphicon glyphicon-calendar icon-font" aria-hidden="true"></span><br>WHEN</p>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-xs-6 text-left">
-                        <p class="lead">The competition will take place on <strong>Saturday, April 7th, <?php echo date("Y"); ?></strong>. Mark your calendars!<br>Don't forget to sign up by April 6th!</p>
+                        <p class="lead">The competition will take place on <strong>Sunday, April 28th, <?php echo date("Y"); ?></strong>. Mark your calendars!<br>Don't forget to sign up by April 27th at the latest!</p>
                     </div>
                 </div>
 
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">8:45 - 9:00</span>
+                            <span class="large-text">2:30 - 2:40</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <p class="lead text-left">Arrive at Community School of Naples Moe Kent Family Field House and check in for the day.
-                            <span class="hidden-print"><a href="https://www.google.com/maps/place/13275+Livingston+Road+Naples+Florida+3410" target="_blank">View Map</a><br> Address: 13275 Livingston Road, Naples Florida, 34109</span></p>
+                        <p class="lead text-left">Arrive at Community School of Naples Library/LMA and check in for the day.
+                            <span class="hidden-print"><a href="https://www.google.com/maps/place/13275+Livingston+Road+Naples+Florida+3410" target="_blank">View On Map</a><br> Address: 13275 Livingston Road, Naples Florida, 34109</span></p>
+                            <span class="hidden-print">Refer to <a href="https://drive.google.com/file/d/1klj33virBcPj3fF9RUm5StrgVCarCSSe/view?usp=sharing" target="_blank">the parking map</a></span>
                     </div>
                 </div>
 
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">9:00 - 9:10</span>
+                            <span class="large-text">2:40-2:45</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -78,7 +79,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">9:15 - 9:25</span>
+                            <span class="large-text">2:55 - 3:15</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -92,7 +93,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">9:25 - 9:45</span>
+                            <span class="large-text">3:15-3:25</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -105,7 +106,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">9:50 - 10:30</span>
+                            <span class="large-text">3:30 - 4:10</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -118,7 +119,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">10:40 - 11:20</span>
+                            <span class="large-text">4:30 - 5:20</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -132,7 +133,7 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">11:30 - 12:00</span>
+                            <span class="large-text">5:25 - 6:05</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -146,11 +147,11 @@ require_once "includes/require.php";
                 <div class="row info-row">
                     <div class="col-lg-6 text-center">
                         <p>
-                            <span class="large-text">12:10 - 12:30</span>
+                            <span class="large-text">6:15 - 6:30</span>
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <p class="lead text-left">Lunch! Pizza will be provided by Gulfstream Painting.</p>
+                        <p class="lead text-left">Dinner! Pizza will be provided by Gulfstream Painting.</p>
                         <p class="lead text-left">Awards, prizes, and then your parents will pick you up.</p>
                     </div>
                 </div>
