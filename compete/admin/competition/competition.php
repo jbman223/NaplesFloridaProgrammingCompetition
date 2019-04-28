@@ -112,7 +112,7 @@ $quizzes = $state->fetchAll(PDO::FETCH_ASSOC);
 
                         <br />
 
-                        <a href="finalReport.php?id1=17&id2=18&id3=1" class="btn btn-block btn-success">Final Score Sheet</a>
+                        <a href="finalReport.php?id1=31&id2=32&id3=1" class="btn btn-block btn-success">Final Score Sheet</a>
 
                     </div>
 
